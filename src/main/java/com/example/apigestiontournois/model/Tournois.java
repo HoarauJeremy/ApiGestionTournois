@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Tournois implements Serializable {
 
     @Id
@@ -19,6 +20,13 @@ public class Tournois implements Serializable {
     private LocalDateTime date_fin;
 
     public Tournois() {}
+
+    public Tournois(Long id, String nom, LocalDateTime date_debut, LocalDateTime date_fin) {
+        this.id = id;
+        this.nom = nom;
+        this.date_debut = date_debut;
+        this.date_fin = date_fin;
+    }
 
     public void setId(Long id) {
         this.id = id;

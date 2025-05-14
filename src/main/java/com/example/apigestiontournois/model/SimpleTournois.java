@@ -4,22 +4,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class SimpleTournois {
+public class SimpleTournois extends Tournois {
 
     @Id
     private Long id;
-    private Boolean ThirdPlaceMatch;
+    private Boolean thirdPlaceMatch;
 
 
     //constructeur
 
     public SimpleTournois(Long id, Boolean thirdPlaceMatch) {
+        super();
         this.id = id;
-        ThirdPlaceMatch = thirdPlaceMatch;
+        this.thirdPlaceMatch = thirdPlaceMatch;
     }
 
     public SimpleTournois() {
-
+        super();
     }
 
     public Long getId() {
@@ -31,10 +32,10 @@ public class SimpleTournois {
     }
 
     public Boolean getThirdPlaceMatch() {
-        return ThirdPlaceMatch;
+        return thirdPlaceMatch;
     }
 
     public void setThirdPlaceMatch(Boolean thirdPlaceMatch) {
-        ThirdPlaceMatch = thirdPlaceMatch;
+        this.thirdPlaceMatch = thirdPlaceMatch;
     }
 }
