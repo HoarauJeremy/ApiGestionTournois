@@ -4,12 +4,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class DoubleTournois {
+public class DoubleTournois extends Tournois {
 
     @Id
+    private Long id;
     private Boolean ConsolationFinal;
 
-    public DoubleTournois(Boolean consolationFinal) {
+    public DoubleTournois(Long id, Boolean consolationFinal) {
+        super();
+        this.id = id;
         ConsolationFinal = consolationFinal;
     }
 
