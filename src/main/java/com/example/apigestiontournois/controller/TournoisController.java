@@ -35,9 +35,42 @@ public class TournoisController {
         }
     }
 
-    @PostMapping
+    /*@PostMapping
     @Transactional
     public ResponseEntity<Tournois> createTournois(@RequestBody Tournois tournois){
+        if (tournoisRepository.findById(tournois.getId()).isPresent()){
+            tournoisRepository.save(tournois);
+            return new ResponseEntity<>(tournois, HttpStatus.CREATED);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }*/
+
+    @PostMapping("/simple")
+    @Transactional
+    public ResponseEntity<Tournois> createSimpleTournois(@RequestBody Tournois tournois){
+        if (tournoisRepository.findById(tournois.getId()).isPresent()){
+            tournoisRepository.save(tournois);
+            return new ResponseEntity<>(tournois, HttpStatus.CREATED);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PostMapping("/double")
+    @Transactional
+    public ResponseEntity<Tournois> createDoubleTournois(@RequestBody Tournois tournois){
+        if (tournoisRepository.findById(tournois.getId()).isPresent()){
+            tournoisRepository.save(tournois);
+            return new ResponseEntity<>(tournois, HttpStatus.CREATED);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PostMapping("/championnat")
+    @Transactional
+    public ResponseEntity<Tournois> createChampionnat(@RequestBody Tournois tournois){
         if (tournoisRepository.findById(tournois.getId()).isPresent()){
             tournoisRepository.save(tournois);
             return new ResponseEntity<>(tournois, HttpStatus.CREATED);
