@@ -1,6 +1,8 @@
 package com.example.apigestiontournois.controller;
 
+import com.example.apigestiontournois.model.SimpleTournois;
 import com.example.apigestiontournois.model.Tournois;
+import com.example.apigestiontournois.repository.SimpleRepository;
 import com.example.apigestiontournois.repository.TournoisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,10 +18,17 @@ public class TournoisController {
 
     @Autowired
     private TournoisRepository tournoisRepository;
+    @Autowired
+    private SimpleRepository simpleRepository;
 
     @GetMapping
     public ResponseEntity<List<Tournois>> getAllTournois(){
         return new ResponseEntity<>((List<Tournois>) tournoisRepository.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/simple")
+    public ResponseEntity<List<SimpleTournois>> getTournoisSimple(){
+        return new ResponseEntity<>((List<SimpleTournois>) simpleRepository.findAll(), HttpStatus.OK);
     }
 
     /**
