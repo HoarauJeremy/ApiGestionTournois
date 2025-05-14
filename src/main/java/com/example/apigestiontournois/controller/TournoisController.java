@@ -2,6 +2,7 @@ package com.example.apigestiontournois.controller;
 
 import com.example.apigestiontournois.model.Tournois;
 import com.example.apigestiontournois.repository.TournoisRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +14,7 @@ import java.util.List;
 @RequestMapping("tournois")
 public class TournoisController {
 
+    @Autowired
     private TournoisRepository tournoisRepository;
 
     @GetMapping
