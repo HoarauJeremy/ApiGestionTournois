@@ -34,3 +34,5 @@ build/
 
 # Fichiers AppleDouble (macOS)
 ._*
+
+src/main/resources/application.properties
