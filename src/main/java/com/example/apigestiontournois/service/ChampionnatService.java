@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-class ChampionnatService {
+public class ChampionnatService {
 
     private final ChampionnatRepository championnatRepository;
 
