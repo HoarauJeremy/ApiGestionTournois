@@ -19,6 +19,6 @@ public class SimpleTournoisController {
     @GetMapping
     public String getAllSimpleTournois(Model model  ) {
         model.addAttribute("simpleTournois", simpleTournoisService.getAllSimpleTournois());
-        return "SimpleTournois/index";
+        return "Simple/index";
     }
 }
