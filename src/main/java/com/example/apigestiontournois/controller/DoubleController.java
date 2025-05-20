@@ -44,7 +44,7 @@ class DoubleController {
         return "redirect:/double";
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("delete/{id}")
     public String deleteTournois(@PathVariable Long id) {
         doubleTournoisService.deleteDoubleTournoisById(id);
         return "redirect:/double";
