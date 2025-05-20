@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-interface DoubleRepository extends CrudRepository<DoubleTournois, Long> {
+public interface DoubleRepository extends CrudRepository<DoubleTournois, Long> {
 }

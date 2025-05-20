@@ -11,6 +11,7 @@ import java.util.Optional;
 @Service
 public class TournoisService {
 
+    @Autowired
     private TournoisRepository tournoisRepository;
 
     @Autowired
