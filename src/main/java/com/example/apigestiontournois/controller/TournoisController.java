@@ -4,37 +4,46 @@ import com.example.apigestiontournois.model.SimpleTournois;
 import com.example.apigestiontournois.model.Tournois;
 import com.example.apigestiontournois.repository.SimpleRepository;
 import com.example.apigestiontournois.repository.TournoisRepository;
+import com.example.apigestiontournois.service.TournoisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("tournois")
 public class TournoisController {
 
     @Autowired
+    private TournoisService tournoisService;
+
+    /*@Autowired
     private TournoisRepository tournoisRepository;
     @Autowired
-    private SimpleRepository simpleRepository;
+    private SimpleRepository simpleRepository;*/
 
     @GetMapping
-    public ResponseEntity<List<Tournois>> getAllTournois(){
-        return new ResponseEntity<>((List<Tournois>) tournoisRepository.findAll(), HttpStatus.OK);
+    public String getAllTournois(Model model) {
+
+        model.addAttribute("tournois", tournoisService.getAllTournois());
+
+        return "Tournois/index";
     }
 
-    @GetMapping("/simple")
+    /*@GetMapping("/simple")
     public ResponseEntity<List<SimpleTournois>> getTournoisSimple(){
         return new ResponseEntity<>((List<SimpleTournois>) simpleRepository.findAll(), HttpStatus.OK);
     }
 
-    /**
+    *//**
      * @param id Identifiant du tournois
      * @return Les informations sur un tournois
-     */
+     *//*
     @GetMapping("/{id}")
     public ResponseEntity<Tournois> getTournoisById(@PathVariable Long id){
         if(tournoisRepository.findById(id).isPresent()){
@@ -44,7 +53,7 @@ public class TournoisController {
         }
     }
 
-    /*@PostMapping
+    *//*@PostMapping
     @Transactional
     public ResponseEntity<Tournois> createTournois(@RequestBody Tournois tournois){
         if (tournoisRepository.findById(tournois.getId()).isPresent()){
@@ -53,7 +62,7 @@ public class TournoisController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-    }*/
+    }*//*
 
     @PostMapping("/simple")
     @Transactional
@@ -116,6 +125,6 @@ public class TournoisController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-    }
+    }*/
 
 }
