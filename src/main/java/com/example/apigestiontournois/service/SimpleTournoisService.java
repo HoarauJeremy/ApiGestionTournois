@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-class SimpleTournoisService {
+public class SimpleTournoisService {
 
     private final TournoisRepository tournoisRepository;
 
@@ -18,7 +18,7 @@ class SimpleTournoisService {
         this.tournoisRepository = tournoisRepository;
     }
 
-    public List<Tournois> getAllTournois() {
+    public List<Tournois> getAllSimpleTournois() {
         return (List<Tournois>) tournoisRepository.findAll();
     }
 

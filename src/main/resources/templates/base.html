@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Tournoi Ultime</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: white;
+            color: #007bff;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #e1ecff;
+        }
+
+        section.info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 60px 20px;
+            background: #ffffff;
+        }
+
+        .info-box {
+            background: #f9fbfd;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin: 15px;
+            width: 280px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-box h2 {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f0f0f0;
+            color: #777;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Tournoi Ultime 2025</h1>
+    <p>Rejoignez-nous pour un événement sportif inoubliable, où passion, performance et fair-play se rencontrent.</p>
+    <a href="#inscription" class="cta-button">S'inscrire maintenant</a>
+</header>
+
+<section class="info">
+    <div class="info-box">
+        <a th:href="@{/simple}" class="link" style="text-decoration: none">
+            <h2>🎯 Simple Tournois</h2>
+            <p>Affronte tes adversaires en 1 contre 1 dans un format rapide et intense.</p>
+        </a>
+    </div>
+    <div class="info-box">
+        <a th:href="@{/championnat}" class="link" style="text-decoration: none">
+            <h2>🏆 Championnat</h2>
+            <p>Un format ligue où chaque match compte. Constamment en compétition.</p>
+        </a>
+    </div>
+    <div class="info-box">
+        <a th:href="@{/tournoi}" class="link" style="text-decoration: none">
+            <h2>🎾 Tournoi</h2>
+            <p>Un format ligue où chaque match compte. Constamment en compétition.</p>
+        </a>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 Tournoi Ultime — Tous droits réservés Jérémy / Dorian ❤️.
+</footer>
+
+</body>
+</html>
