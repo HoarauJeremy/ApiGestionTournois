@@ -1,30 +1,24 @@
 package com.example.apigestiontournois.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 
 @Entity
 public class DoubleTournois extends Tournois {
 
-    @Id
-    private Long id;
-    private Boolean ConsolationFinal;
+    private Boolean hasConsolationFinal;
 
-    public DoubleTournois(Long id, Boolean consolationFinal) {
+    public DoubleTournois(Long id, Boolean hasConsolationFinal) {
         super();
-        this.id = id;
-        ConsolationFinal = consolationFinal;
+        this.hasConsolationFinal = hasConsolationFinal;
     }
 
-    public DoubleTournois() {
+    public DoubleTournois() { }
 
+    public Boolean getHasConsolationFinal() {
+        return hasConsolationFinal;
     }
 
-    public Boolean getConsolationFinal() {
-        return ConsolationFinal;
-    }
-
-    public void setConsolationFinal(Boolean consolationFinal) {
-        ConsolationFinal = consolationFinal;
+    public void setHasConsolationFinal(Boolean hasConsolationFinal) {
+        this.hasConsolationFinal = hasConsolationFinal;
     }
 }
